@@ -34,7 +34,7 @@ var authOptions = {
 app.get('/credentials', function (req, res) {
    request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-         res.send(body);
+         res.json(body);
       }
    });
 });
