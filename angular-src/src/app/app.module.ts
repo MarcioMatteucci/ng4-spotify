@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 // Components
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Services
 import { CredentialService } from './services/credential.service';
@@ -14,7 +16,9 @@ import { CredentialService } from './services/credential.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
