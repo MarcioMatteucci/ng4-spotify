@@ -3,3 +3,9 @@ html {
    position: relative;
    min-height: 100%;
 }
+
+.btn-spotify {
+   background-color: #1ED760;
+   border-color: #1ED760;
+   color: #222222;
+}

@@ -1,0 +1,49 @@
+<h1>
+  Buscá tu MÚSICA:
+</h1>
+<hr style="background-color: #1ED760">
+
+<p class="lead">
+  Usa la aplicación Ng4Spotify para encontrar tu música favorita. Accede a la base de datos de <span class="text-white">Spotify</span>.
+  <br>
+</p>
+
+<div class="btn-group mb-3" data-toggle="buttons">
+
+  <label class="btn btn-primary active fixed" (click)="setOption(1)">
+    <input type="radio" name="option" id="option1" [checked]="option === 1" autocomplete="off">
+    <span *ngIf="option === 1"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Artista
+  </label>
+
+  <label class="btn btn-primary fixed" (click)="setOption(2)">
+    <input type="radio" name="option" id="option2" [checked]="option === 2" autocomplete="off">
+    <span *ngIf="option === 2"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Album
+  </label>
+
+  <label class="btn btn-primary fixed" (click)="setOption(3)">
+    <input type="radio" name="option" id="option3" [checked]="option === 3" autocomplete="off">
+    <span *ngIf="option === 3"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Canción
+  </label>
+
+</div>
+
+<div *ngIf="option === 1">
+  <app-search-artist></app-search-artist>
+</div>
+<div *ngIf="option === 2">
+  <app-search-album></app-search-album>
+</div>
+<div *ngIf="option === 3">
+  <app-search-track></app-search-track>
+</div>
+
+<!-- <div class="btn-group bg-inverse text-white" data-toggle="buttons">
+  <label class="btn active fixed focus" (click)="setOption(1)">
+      <input type="radio" name="option" id="option1" [checked]="option === 1" autocomplete="off">
+      <span *ngIf="option === 1"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Películas
+    </label>
+  <label class="btn fixed" (click)="setOption(2)">
+      <input type="radio" name="option" id="option2" [checked]="option === 2" autocomplete="off">
+      <span *ngIf="option === 2"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;</span>Series
+    </label>
+</div> -->

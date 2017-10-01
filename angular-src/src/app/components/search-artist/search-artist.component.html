@@ -1,0 +1,9 @@
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-music" aria-hidden="true"></i></span>
+      <input type="text" autocomplete="off" name="searchString" placeholder="Ingrese el Título de una Película..." class="form-control"
+        [(ngModel)]="searchStr" (keyup)="searchArtist()">
+    </div>
+  </div>
+</form>

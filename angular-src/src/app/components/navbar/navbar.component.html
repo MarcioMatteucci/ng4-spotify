@@ -1,27 +1,27 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-3">
 
-    <a href="#" class="navbar-brand">
-      <img class="d-inline-block align-top" src="https://avatars1.githubusercontent.com/u/251374?v=4&s=400" width="30" height="30" alt="">
-      Ng4Spotify
-    </a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarItems"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="navbar-brand" routerLink="/">
+    <img class="d-inline-block align-top" src="https://avatars1.githubusercontent.com/u/251374?v=4&s=400" width="30" height="30" alt="">
+    Ng4Spotify
+  </a>
 
-    <div class="collapse navbar-collapse" id="navbarCollapse">
 
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="#home" class="nav-link">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a href="#home" class="nav-link">Buscar Música&nbsp;&nbsp;<i class="fa fa-search fa-flip-horizontal" aria-hidden="true"></i></a>
-        </li>
-      </ul>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
 
-    </div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/">Inicio</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/search">Buscar Música&nbsp;&nbsp;<i class="fa fa-search fa-flip-horizontal" aria-hidden="true"></i></a>
+      </li>
+    </ul>
 
   </div>
+
 </nav>
