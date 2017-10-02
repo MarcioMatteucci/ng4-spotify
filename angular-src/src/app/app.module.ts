@@ -15,9 +15,12 @@ import { SearchArtistComponent } from './components/search-artist/search-artist.
 import { SearchAlbumComponent } from './components/search-album/search-album.component';
 import { SearchTrackComponent } from './components/search-track/search-track.component';
 
-
 // Services
 import { CredentialService } from './services/credential.service';
+import { SearchService } from './services/search.service';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { CredentialService } from './services/credential.service';
     SearchComponent,
     SearchArtistComponent,
     SearchAlbumComponent,
-    SearchTrackComponent
+    SearchTrackComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { CredentialService } from './services/credential.service';
     HttpModule,
     FormsModule
   ],
-  providers: [CredentialService],
+  providers: [CredentialService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
