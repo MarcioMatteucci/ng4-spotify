@@ -9,3 +9,9 @@ html {
    border-color: #1ED760;
    color: #222222;
 }
+
+.btn-spotify:hover {
+   background-color: #129639;
+   border-color: #129639;
+   color: #fff;
+}

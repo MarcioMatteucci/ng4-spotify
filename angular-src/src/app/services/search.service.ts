@@ -19,6 +19,8 @@ export class SearchService {
   trackType = '&type=track';
 
   searchArtistUrl;
+  searchAlbumUrl;
+  searchTrackUrl;
 
   constructor(
     private http: Http
@@ -37,6 +39,36 @@ export class SearchService {
     const requestOptions = new RequestOptions({
       method: RequestMethod.Get,
       url: this.searchArtistUrl,
+      headers: this.headers
+    });
+
+    return this.http.request(new Request(requestOptions))
+      .map(res => res.json());
+  }
+
+  // "https://api.spotify.com/v1/search?query=the+book+of+souls&type=album&market=ES&offset=0&limit=10"
+  searchAlbum(str) {
+    this.setAuthenticationHeader();
+    this.searchAlbumUrl = this.searchUrl + this.query + str + this.albumType + this.market + this.limit + this.offset;
+
+    const requestOptions = new RequestOptions({
+      method: RequestMethod.Get,
+      url: this.searchAlbumUrl,
+      headers: this.headers
+    });
+
+    return this.http.request(new Request(requestOptions))
+      .map(res => res.json());
+  }
+
+  // "https://api.spotify.com/v1/search?q=the+trooper&type=track&market=ES&limit=10"
+  searchTrack(str) {
+    this.setAuthenticationHeader();
+    this.searchTrackUrl = this.searchUrl + this.query + str + this.trackType + this.market + this.limit + this.offset;
+
+    const requestOptions = new RequestOptions({
+      method: RequestMethod.Get,
+      url: this.searchTrackUrl,
       headers: this.headers
     });
 

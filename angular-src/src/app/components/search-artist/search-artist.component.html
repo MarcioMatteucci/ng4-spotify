@@ -15,7 +15,7 @@
         <div *ngIf="!(artist.images.length === 0)">
           <img class="d-flex mr-3 rounded-circle" src="{{ artist.images[0].url }}" width="auto" height="90px" alt="Sin imagen">
         </div>
-        <h3 class="card-title"><a routerLink="/artist/{{artist.id}}" routerLinkActive="active"><strong>{{ artist.name }}</strong></a></h3>
+        <h4 class="card-title"><a routerLink="/artist/{{artist.id}}" routerLinkActive="active">{{ artist.name }}</a></h4>
         <p class="card-text my-1"><strong>Géneros: </strong>
           <span *ngFor="let genre of artist.genres">{{ genre | capitalize }}.&nbsp;</span>
           <span *ngIf="artist.genres.length === 0">Sin géneros.</span>

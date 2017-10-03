@@ -13,13 +13,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchArtistComponent } from './components/search-artist/search-artist.component';
 import { SearchAlbumComponent } from './components/search-album/search-album.component';
-import { SearchTrackComponent } from './components/search-track/search-track.component';
 
 // Services
 import { CredentialService } from './services/credential.service';
 import { SearchService } from './services/search.service';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
 
+// Pipes
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     SearchComponent,
     SearchArtistComponent,
     SearchAlbumComponent,
-    SearchTrackComponent,
     CapitalizePipe
   ],
   imports: [

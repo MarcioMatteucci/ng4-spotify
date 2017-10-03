@@ -1,3 +1,21 @@
 .fixed {
    width: 120px;
 }
+
+.btn-outline-primary {
+   border-color: #1ED760;
+   color: #1ED760;
+}
+
+.active {
+   background-color: #1ED760;
+   border-color: #1ED760;
+   color: #222222;
+}
+
+.btn:hover {
+   background-color: #129639;
+   border-color: #129639;
+   color: #fff;
+}
+
