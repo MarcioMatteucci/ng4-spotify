@@ -16,7 +16,7 @@ import { SearchAlbumComponent } from './components/search-album/search-album.com
 
 // Services
 import { CredentialService } from './services/credential.service';
-import { SearchService } from './services/search.service';
+import { SpotifyService } from './services/spotify.service';
 
 // Pipes
 import { CapitalizePipe } from './pipes/capitalize.pipe';
@@ -38,7 +38,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     HttpModule,
     FormsModule
   ],
-  providers: [CredentialService, SearchService],
+  providers: [CredentialService, SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { Http, Headers, RequestOptions, Request, RequestMethod } from '@angular/
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class SearchService {
+export class SpotifyService {
 
   token = localStorage.getItem('access_token');
   headers;

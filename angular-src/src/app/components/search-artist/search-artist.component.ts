@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SearchService } from './../../services/search.service';
+import { SpotifyService } from './../../services/spotify.service';
 import { Artist } from './../../models/Artist';
 
 import { CapitalizePipe } from './../../pipes/capitalize.pipe';
@@ -17,11 +17,11 @@ export class SearchArtistComponent implements OnInit {
   findSomething = false;
 
   constructor(
-    private searchService: SearchService
+    private spotifyService: SpotifyService
   ) { }
 
   searchArtist() {
-    this.searchService.searchArtist(this.searchStr)
+    this.spotifyService.searchArtist(this.searchStr)
       .subscribe(data => {
         // onsole.log(data.artists.total);
         if (data.artists.total > 0) {
