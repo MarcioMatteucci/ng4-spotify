@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchArtistComponent } from './components/search-artist/search-artist.component';
 import { SearchAlbumComponent } from './components/search-album/search-album.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 // Services
 import { CredentialService } from './services/credential.service';
@@ -30,7 +31,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     SearchComponent,
     SearchArtistComponent,
     SearchAlbumComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+.img {   
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.rounded-circle {
+   border: 3px solid grey;
+}
+
+img {
+   height: 100%;
+   max-height: 250px;
+}
+
+.fa {
+   color: #1ED760;
+}
+
+@media screen and (max-width: 767px){
+   .info {
+      text-align: center;
+   }
+}
+
+.mt-custom {
+   margin-top: 3em;
+}
+
+.btn {
+   background-color: #1ED760;
+   border-color: #1ED760;
+   color: #fff;
+}
+
+.card-text {   
+   overflow: hidden;
+   white-space: nowrap;
+   display: block;
+   text-overflow: ellipsis;
+}
+
+.btn:hover {
+   background-color: #129639;
+   border-color: #129639;
+   color: #fff;
+}

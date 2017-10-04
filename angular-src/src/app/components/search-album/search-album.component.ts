@@ -23,11 +23,9 @@ export class SearchAlbumComponent implements OnInit {
   searchAlbum() {
     this.spotifyService.searchAlbum(this.searchStr)
       .subscribe(data => {
-        // console.log(data.albums);
         if (data.albums.total > 0) {
           this.findSomething = true;
           this.albums = data.albums.items;
-          console.log(this.albums);
         } else {
           this.findSomething = false;
         }

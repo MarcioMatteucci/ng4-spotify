@@ -23,11 +23,9 @@ export class SearchArtistComponent implements OnInit {
   searchArtist() {
     this.spotifyService.searchArtist(this.searchStr)
       .subscribe(data => {
-        // onsole.log(data.artists.total);
         if (data.artists.total > 0) {
           this.findSomething = true;
           this.artists = data.artists.items;
-          console.log(this.artists);
         } else {
           this.findSomething = false;
         }

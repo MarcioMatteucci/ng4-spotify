@@ -9,6 +9,7 @@ export class SpotifyService {
   headers;
 
   searchUrl = 'https://api.spotify.com/v1/search';
+  artistByIdUrl = 'https://api.spotify.com/v1/artists/';
   query = '?q=';
   market = '&market=ES';
   limit = '&limit=20';
@@ -16,11 +17,12 @@ export class SpotifyService {
 
   artistType = '&type=artist';
   albumType = '&type=album';
-  trackType = '&type=track';
 
   searchArtistUrl;
   searchAlbumUrl;
-  searchTrackUrl;
+  getAlbumsByArtistUrl;
+
+  getArtistByIdUrl;
 
   constructor(
     private http: Http
@@ -61,14 +63,29 @@ export class SpotifyService {
       .map(res => res.json());
   }
 
-  // "https://api.spotify.com/v1/search?q=the+trooper&type=track&market=ES&limit=10"
-  searchTrack(str) {
+  // "https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao"
+  getArtistById(artistId) {
     this.setAuthenticationHeader();
-    this.searchTrackUrl = this.searchUrl + this.query + str + this.trackType + this.market + this.limit + this.offset;
+    this.getArtistByIdUrl = this.artistByIdUrl + artistId;
 
     const requestOptions = new RequestOptions({
       method: RequestMethod.Get,
-      url: this.searchTrackUrl,
+      url: this.getArtistByIdUrl,
+      headers: this.headers
+    });
+
+    return this.http.request(new Request(requestOptions))
+      .map(res => res.json());
+  }
+
+  // "https://api.spotify.com/v1/artists/2ye2Wgw4gimLv2eAKyk1NB/albums?market=ES&limit=50&offset=0"
+  getAlbumsByArtist(artistId) {
+    this.setAuthenticationHeader();
+    this.getAlbumsByArtistUrl = this.artistByIdUrl + artistId + '/albums?market=ES&limit=50' + this.offset;
+
+    const requestOptions = new RequestOptions({
+      method: RequestMethod.Get,
+      url: this.getAlbumsByArtistUrl,
       headers: this.headers
     });
 

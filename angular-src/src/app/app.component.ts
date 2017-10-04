@@ -15,7 +15,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.credentialService.getAccessToken()
       .subscribe(data => {
-        // console.log(data);
         localStorage.setItem('access_token', data.access_token);
       });
   }
