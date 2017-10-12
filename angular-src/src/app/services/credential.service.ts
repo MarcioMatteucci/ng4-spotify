@@ -10,7 +10,7 @@ export class CredentialService {
   ) { }
 
   getAccessToken() {
-    return this.http.get('/credentials')
+    return this.http.get('credentials')
       .map(res => res.json());
   }
 
