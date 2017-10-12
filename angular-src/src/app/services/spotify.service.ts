@@ -10,6 +10,7 @@ export class SpotifyService {
 
   searchUrl = 'https://api.spotify.com/v1/search';
   artistByIdUrl = 'https://api.spotify.com/v1/artists/';
+  albumByIdUrl = 'https://api.spotify.com/v1/albums/';
   query = '?q=';
   market = '&market=ES';
   limit = '&limit=20';
@@ -21,6 +22,7 @@ export class SpotifyService {
   searchArtistUrl;
   searchAlbumUrl;
   getAlbumsByArtistUrl;
+  getAlbumByIdUrl;
 
   getArtistByIdUrl;
 
@@ -86,6 +88,21 @@ export class SpotifyService {
     const requestOptions = new RequestOptions({
       method: RequestMethod.Get,
       url: this.getAlbumsByArtistUrl,
+      headers: this.headers
+    });
+
+    return this.http.request(new Request(requestOptions))
+      .map(res => res.json());
+  }
+
+  // "https://api.spotify.com/v1/albums/4vSfHrq6XxVyMcJ6PguFR2?market=ES"
+  getAlbumById(albumId) {
+    this.setAuthenticationHeader();
+    this.getAlbumByIdUrl = this.albumByIdUrl + albumId + '?market=ES';
+
+    const requestOptions = new RequestOptions({
+      method: RequestMethod.Get,
+      url: this.getAlbumByIdUrl,
       headers: this.headers
     });
 

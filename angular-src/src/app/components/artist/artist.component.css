@@ -23,7 +23,7 @@ img {
    }
 }
 
-.btn {
+.btn-primary {
    background-color: #1ED760;
    border-color: #1ED760;
    color: #fff;
@@ -41,3 +41,15 @@ img {
    border-color: #129639;
    color: #fff;
 }
+
+.btn-outline-primary {   
+   color: #1ED760;
+   border-color: #1ED760;
+}
+
+.btn-outline-primary:hover {   
+   background-color: #1ED760;
+   border-color: #1ED760;
+   color: #fff;
+}
+

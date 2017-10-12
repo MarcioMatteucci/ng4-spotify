@@ -14,6 +14,8 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchArtistComponent } from './components/search-artist/search-artist.component';
 import { SearchAlbumComponent } from './components/search-album/search-album.component';
 import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
+
 
 // Services
 import { CredentialService } from './services/credential.service';
@@ -32,7 +34,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     SearchArtistComponent,
     SearchAlbumComponent,
     CapitalizePipe,
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

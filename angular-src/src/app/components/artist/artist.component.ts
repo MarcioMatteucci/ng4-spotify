@@ -27,7 +27,7 @@ export class ArtistComponent implements OnInit {
 
     setTimeout(() => {
       this.isLoading = false;
-    }, 2500);
+    }, 1500);
 
     this.route.params.subscribe(params => {
       this.artistId = params['id'];
