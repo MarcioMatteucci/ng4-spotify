@@ -2,6 +2,7 @@ const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 // Spotify credentials
 const client_id = '3c9642299ae843d19168eceecbc8b56f';
@@ -17,6 +18,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+
+// Static File
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Requests Authorization
 var authOptions = {
