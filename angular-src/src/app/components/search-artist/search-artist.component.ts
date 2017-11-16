@@ -26,7 +26,6 @@ export class SearchArtistComponent implements OnInit {
         if (data.artists.total > 0) {
           this.findSomething = true;
           this.artists = data.artists.items;
-          console.log(this.artists);
         } else {
           this.findSomething = false;
         }

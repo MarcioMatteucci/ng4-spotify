@@ -27,12 +27,10 @@ export class AlbumComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.albumId = params['id'];
-      console.log(this.albumId);
     });
 
     this.spotifyService.getAlbumById(this.albumId)
       .subscribe(data => {
-        console.log(data);
         this.album = data;
       });
   }

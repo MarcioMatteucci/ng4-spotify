@@ -7,10 +7,10 @@
    color: #1ED760;
 }
 
-.active {
-   background-color: #1ED760;
-   border-color: #1ED760;
-   color: #222222;
+.active, .btn:active {
+   background-color: #1ED760 !important;
+   border-color: #1ED760 !important;
+   color: #222222 !important;
 }
 
 .btn:hover {
@@ -18,4 +18,3 @@
    border-color: #129639;
    color: #222222;
 }
-

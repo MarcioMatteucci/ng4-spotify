@@ -1,7 +1,9 @@
 <form>
   <div class="form-group">
     <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-music" aria-hidden="true"></i></span>
+      <span class="input-group-addon">
+        <i class="fa fa-music" aria-hidden="true"></i>
+      </span>
       <input type="text" autocomplete="off" name="searchString" placeholder="Ingrese un Artista" class="form-control" [(ngModel)]="searchStr"
         (keyup)="searchArtist()">
     </div>
@@ -11,12 +13,15 @@
 <div *ngIf="findSomething && searchStr !== ''">
   <div *ngFor="let artist of artists">
     <div class="card mb-1">
-      <div class="card-block">
+      <div class="card-body">
         <div *ngIf="!(artist.images.length === 0)">
-          <img class="d-flex mr-3 rounded-circle" src="{{ artist.images[0].url }}" width="auto" height="90px" alt="Sin imagen">
+          <img class="d-flex mr-3 rounded-circle" src="{{ artist.images[0].url }}" width="auto" height="90px">
         </div>
-        <h4 class="card-title"><a routerLink="/artist/{{artist.id}}" routerLinkActive="active">{{ artist.name }}</a></h4>
-        <p class="card-text my-1"><strong>Géneros: </strong>
+        <h4 class="card-title">
+          <a routerLink="/artist/{{artist.id}}" routerLinkActive="active">{{ artist.name }}</a>
+        </h4>
+        <p class="card-text my-1">
+          <strong>Géneros: </strong>
           <span *ngFor="let genre of artist.genres">{{ genre | capitalize }}.&nbsp;</span>
           <span *ngIf="artist.genres.length === 0">Sin géneros.</span>
         </p>
